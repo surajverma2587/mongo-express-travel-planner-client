@@ -8,6 +8,7 @@ class MyPlans extends Component {
     super(props);
 
     this.state = {
+      isLoading: true,
       plans: [],
     };
   }
@@ -20,6 +21,7 @@ class MyPlans extends Component {
 
       this.setState({
         plans,
+        isLoading: false,
       });
     } catch (error) {
       console.log(error.message);
@@ -27,11 +29,12 @@ class MyPlans extends Component {
   }
 
   render() {
-    const { plans } = this.state;
+    const { plans, isLoading } = this.state;
     return (
       <div>
         <Header title="My Plans" />
-        {!!plans.length && <h2>Plans!!!!</h2>}
+        {isLoading && <h2>Loading...</h2>}
+        {!!plans.length && !isLoading && <h2>Plans!!!!</h2>}
       </div>
     );
   }
