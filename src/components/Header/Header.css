@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+  background-color: aquamarine;
+  padding: 2rem 0rem;
+}
+
+.header.dark {
+  background-color: black;
+  color: white;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.border {
+  border: 1px solid red;
+}
